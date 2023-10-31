@@ -8,72 +8,37 @@ Domain : Social Media (YouTube)
 
 Problem Statement:
 
-The problem statement is to create a Streamlit application that allows users to access and analyze data from multiple YouTube channels. The application has the following features.
+The problem statement is to create a Streamlit application that allows users to access and analyze data from multiple YouTube channels. 
 
-1.Ability to input a YouTube channel ID and retrieve all the relevant data (Channel name, subscribers, total video count, playlist ID, video ID, likes, dislikes, comments of each video) using Google API.
+About the Project:
 
-2.Automatically / Option to store the data in a MongoDB database as a data lake.
+1.	The provided code is a Python script that uses the Streamlit library to create a web application for fetching data from the YouTube API,storing it in a MongoDB database, and uploading it to a MySQL database for further analysis. Here's a brief explanation of the code:
 
-3.Ability to collect data for up to 10 different YouTube channels and store them in the data lake by clicking a button.
+2.	The script imports necessary libraries and modules, including Streamlit, Google API client, pymongo, datetime, time, pandas, numpy, matplotlib and mysql.connector.
 
-4.Automatically / Option to select a channel name and migrate its data from the data lake to a SQL database as tables.
+3.	It sets the Streamlit page configuration and displays a title for the web application.
 
-5.Ability to search and retrieve data from the SQL database using different search options, including joining tables to get channel details.
+4.	The code defines several functions for fetching data from the YouTube API, including channel statistics, playlist data, video IDs, video details and comment details. These functions use the provided YouTube API key to make API requests and retrieve the desired data.
 
-Installation:
+5.	The code defines a function to fetch channel names from the MongoDB database.
 
-1.Clone the repository:
+6.	The script creates a connection to the MongoDB database and defines collections for channel data, video data, and comment data.
 
-git clone 
+7.	The code checks for user input (channel ID) and a button click to fetch channel details and upload them to the MongoDB database.It calls the previously defined functions to fetch channel details, playlist data, video IDs, video details, and comment details.The fetched data is then inserted into the corresponding collections in the MongoDB database.
 
-Obtain API credentials:
+8.	After fetching and uploading the data to MongoDB, the script provides an option for the user to select channels for uploading the data to a MySQL database. It displays a multiselect input for channel selection and a button to upload the data to MySQL.
 
-1.Go to the Google Developers Console.
+9.	When the button to upload data to MySQL is clicked, the script fetches channel details, video details, and comment details from the MongoDB collections. It establishes a connection to the MySQL database and inserts the data into corresponding tables using SQL queries. It uses pandas and the SQLAlchemy engine for the data insertion process.
 
-2.Create a new project or select an existing project.
+10.	Finally, the script provides a selection box for the user to choose from several predefined questions. Based on the selected question, the script executes
+11.	corresponding SQL queries on the MySQL database and retrieves the results. The results are displayed in a table or a bar chart using Streamlit's table and bar_chart functions.
 
-3.Enable the YouTube Data API v3.
+12.	Overall, the code combines the functionalities of fetching data from the YouTube API, storing it in MongoDB, uploading it to MySQL, and displaying the results in a web application using Streamlit.
 
-Configuration:
 
-1.Open the mainfile.py file in the project directory.
 
-2.Set the desired configuration options:
+Acknowledgment:
 
-3.Specify your YouTube API key.
+If you have any questions, suggestions, or feedback, please feel free to contact me at hariprakashpm@gmail.com
 
-4.Choose the database connection details (SQL and MongoDB).
-
-5.Get the Youtube Channel ID from the Youtube's sourcepage
-
-6.provide the Youtube Channel ID data to be harvested.
-
-7.Set other configuration options as needed.
-
-Usage:
-
-1.Launch the Streamlit app: streamlit run mainfile.py
-
-2.Run the mainfile.py script, make sure you have main and sql files in the same folder.
-
-3.The app will start and open in your browser. You can explore the harvested YouTube data and visualize the results.
-
-Contributing:
-
-Contributions are welcome! If you want to contribute to this project, please follow these steps:
-
-1.Fork the repository.
-
-2.Create a new branch: "git checkout -b feature/your-feature-name"
-
-3.Make your modifications and commit the changes: "git commit -m "Add your commit message here"
-
-4.Push your branch: "git push origin feature/your-feature-name"
-
-5.Open a pull request on the GitHub repository, explaining the changes you made and why they should be merged.
-
-Acknowledgments:
-
-If you have any questions, suggestions, or feedback, please feel free to contact us at hariprakashpm@gmail.com
-
-We appreciate your interest in our project! Thank you.
+Thank You...!!!
